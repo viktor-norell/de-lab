@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: stg_iam__users
+    columns:
+      - name: user_id
+        data_tests: [unique, not_null]
+      - name: employment_status
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['ACTIVE', 'TERMINATED']
+
+  - name: stg_iam__applications
+    columns:
+      - name: app_id
+        data_tests: [unique, not_null]
+
+  - name: stg_iam__access_assignments
+    columns:
+      - name: assignment_id
+        data_tests: [unique, not_null]
+      - name: user_id
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('stg_iam__users')
+                field: user_id
