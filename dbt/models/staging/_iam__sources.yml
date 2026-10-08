@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: raw_iam
+    description: Syntetisk IAM-rådata
+    database: lab_raw
+    schema: iam
+    tables:
+      - name: users
+      - name: applications
+      - name: access_assignments
