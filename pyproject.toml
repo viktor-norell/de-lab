@@ -6,3 +6,9 @@ dependencies = [
     "dbt-core~=1.11.0",
     "dbt-snowflake~=1.11.0",
 ]
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.7.0",
+    "ruff>=0.17.0",
+]
