@@ -1,6 +1,6 @@
 select
     user_id,
-    lower(email) as email,
+    {{ normalize_email('email')}} as email,
     full_name,
     department,
     employment_status,
