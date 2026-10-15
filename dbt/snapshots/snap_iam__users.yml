@@ -1,0 +1,7 @@
+snapshots:
+  - name: snap_iam__users
+    relation: source('raw_iam', 'users')
+    config:
+      unique_key: user_id
+      strategy: check
+      check_cols: [employment_status,termination_date]
