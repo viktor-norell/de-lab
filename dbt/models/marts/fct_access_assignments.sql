@@ -9,5 +9,5 @@ select
 from {{ ref('stg_iam__access_assignments') }}
 
 {% if is_incremental() %}
-where granted_at > (select max(granted_at) from {{ this }})
+where granted_at > (select dateadd('day', -3, max(granted_at)) from {{ this }})
 {% endif %}
