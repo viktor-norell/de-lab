@@ -27,4 +27,6 @@ models:
                 to: ref('stg_iam__users')
                 field: user_id
               config:
-                severity: warn  # känd datakvalitetsbrist i källan, ska inte stoppa martet
+                  severity: error
+                  warn_if: ">0"
+                  error_if: ">5"
